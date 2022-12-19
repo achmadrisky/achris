@@ -1,0 +1,37 @@
+.profile img{
+    padding: -10px;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 400px;
+}
+.container h1{
+    font-weight: 500;
+    margin-top: 40px;
+    justify-content: center;
+    text-align: center;
+}
+.container p{
+    color: white;
+    text-align: center;
+    margin-top: 40px;
+}
+.icon{
+    font-size:2.2em;
+    display:inline-block;
+    
+}
+.icon a{
+    color: white;
+    padding: 15px;
+    justify-content: center;
+}
+.icon a:active,
+.icon a:hover{
+    color: rgb(0, 140, 255);
+}
