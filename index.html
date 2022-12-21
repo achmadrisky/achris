@@ -16,16 +16,23 @@
    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
-       
+   
 </head>
 
-<body class="bg-dark text-white">
+<body>
     <nav class="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand m-lg-auto text-white" style="font-size: 1.9em" href="#">
+            <a class="navbar-brand m-lg-auto" style="font-size: 1.9em" href="#">
                 <img src="iki3.jpg" class="img-fluid" style="width: 35px; margin: -7px 0px 0px 0px;" alt="logo">
                 My Personal Website
             </a>
+        </div>
+        <div class="container-md justify-content-end" style="margin-top: 20px; margin-right: 20px;">
+            <div class="form-check form-switch">
+                <input type="checkbox" class="form-check-input" id="checkbox"
+                onclick="setdarkmode()">
+                <label class="form-check-label" for="checkbox"></label>
+            </div>
         </div>
     </nav>
     <div class="container">
@@ -39,29 +46,65 @@
                 <a href="https://www.youtube.com/channel/UCSHflzhNGUOX6EqGGACBlXA"><i class="bi bi-youtube"></i></a>
                 <a href="https://www.tiktok.com/@achrsky"><i class="bi bi-tiktok"></i></a>
             </div>
-            <div class="card" style="width: 18rem; margin-top: 70px;background-color: rgb(87, 87, 87); color: white;">
+            <div class="card" style="width: 18rem; margin-top: 70px;">
                 <img src="bg1.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                   <h5 class="card-title">My Personal Blog</h5>
                   <p class="card-text">I talk about  anything I want and I want to dream something I need to dream, then ask me anything you want to know, so explore it.</p>
-                  <a href="https://achmadrisky.wordpress.com/" class="btn btn-primary">explore </a>
+                  <a href="https://achmadrisky.wordpress.com/" class="btn" style="background-color: #0dcaf0;">explore </a>
                 </div>
             </div>
             <br>
-            <div class="card" style="width: 18rem; background-color: rgb(56, 56, 56);">
+            <div class="card" style="width: 18rem ;">
                 <div class="card-body">
                   <h5 class="card-title">My OpenSea </h5>
                   <p class="card-text">OpenSea is the world's first and largest web3 marketplace for NFTs and crypto collectibles.</p>
-                  <a href="https://opensea.io/achmadrisky" class="btn btn-secondary">explore it</a>
+                  <a href="https://opensea.io/achmadrisky" class="btn" style="background-color: #0dcaf0;">explore </a>
                 </div>
             </div>
             <br>
-            <footer class="justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 align-items-center">
-                    <span class="text-white">&copy;AchmadRisky2022</span>
-                </div>
-            </footer>
         </div>
     </div>
+
+    <!-- script dark mode -->
+    <script>
+        if (localStorage.getItem('theme')=='dark'){
+            setdarkmode();
+            if (document.getElementById('checkbox').checked) {
+                localStorage.setItem('checkbox', true)
+            }
+
+        }
+
+        function setdarkmode() {
+            let isDark = document.body.classList.toggle('darkmode')
+
+            if (isDark) {
+                setdarkmode.checked = true;
+                localStorage.setItem('theme','dark');
+                document.getElementById('checkbox').setAttribute('checked','checked');
+            } else {
+                setdarkmode.checked = true;
+                localStorage.removeItem('theme','dark')
+            }
+        }
+
+    </script>
+
+
+
 </body>
+
+<!-- footer -->
+
+<div class="container-sm">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <div class="col-md-4 d-flex align-items-center">
+        <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+          <img src="iki3.jpg" class="img-fluid" style="width: 35px; margin: 0px 0px 0px 0px;" alt="logo">
+        </a>
+        <span>&copy; Achmad Risky 2022</span>
+      </div>
+    </footer>
+</div>
 </html>
